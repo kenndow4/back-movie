@@ -1,7 +1,9 @@
 import express from 'express'
 import authRouter from './auth'
+import uploadRouter from './upload'
 
-const route = express.Router();
-route.use("/api",authRouter )
+const router = express.Router();
+router.use("/api",authRouter );
+router.use("/api",uploadRouter );
 
-export default route;
+export default router;

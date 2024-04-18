@@ -16,7 +16,7 @@ export const auth = async (req:Request, res:Response)=>{
     
                     // Enviar la cookie JWT al cliente
                     res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 });
-            return res.json({ok:true, });
+            return res.json({ok:true, jwt:token });
            }else{
             
             return res.json({ok:false, message:"Email o contrase incorrecta"});

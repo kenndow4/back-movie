@@ -1,9 +1,9 @@
 import express, {Express} from 'express'
-import router from './routes/auth';
-// import authRouter from './routes/auth';
+// import router from './routes/auth';
 import { db } from '../config/db';
 import 'dotenv/config'
 import { loadMiddlewares } from '../middleware';
+import router from './routes';
 
 
 
@@ -27,7 +27,7 @@ export class Server{
     }
 
     routes() {
-      this.#app.use('/api', router);
+      this.#app.use(router);
     }
     
     start =()=>{
