@@ -26,3 +26,14 @@ export const upload = async (req: Request, res: Response) => {
         res.status(500).json({ error: "error"});
     }
 };
+
+
+
+export const getUpload = async (req: Request, res: Response) => {
+    try {
+        const uploads: Upload[] = await uploadModel.find();
+        res.status(200).json(uploads);
+    } catch (e) {
+        res.status(500).json({ error: "Error al obtener los datos" });
+    }
+};
